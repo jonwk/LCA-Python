@@ -5,14 +5,24 @@ class Node:
         self.left = None
 
 
+# def sayHello():
+#     print("Hello!")
+
+
 def findLCA(n1, n2):
 
-    if(n1 > n2):
-        temp = n1
-        n1 = n2
-        n2 = temp
+    if ((n1!=None and n2!=None) or (n1.count(' ')>0 and n2.count(' ')>0)):
 
-    return findLCAPrivate(root, n1, n2)
+        if(n1 > n2):
+            temp = n1
+            n1 = n2
+            n2 = temp
+
+        return findLCAPrivate(root, n1, n2)
+
+    else:
+        print("Please check n1 and n2 values")
+        return "Error"
 
 
 def findPath(root, n, path):
@@ -37,14 +47,14 @@ def findLCAPrivate(root, n1, n2):
     path2 = []
     
     if((not findPath(root, n1, path1)) or (not findPath(root, n2, path2))):
-        status = ""
+        status = "\n"
         status += ((n1+" is present and ") if len(path1)
-                   > 0 else (n1+" is missing"))
+                   > 0 else (n1+" is missing "))
 
         status += ((n2+" is present and ") if len(path2)
-                   > 0 else (n2+" is missing"))
+                   > 0 else (n2+" is missing "))
 
-        print(status)
+        # print(status)
 
         return "Error"
 
@@ -75,27 +85,27 @@ def print_node(node):
     return
 
 
-node1 = root = Node("a")
-node2 = root.left = Node("b")
-node3 = root.right = Node("c")
-node4 = node2.left = Node("d")
-node5 = node2.right = Node("e")
+# node1 = root = Node("a")
+# node2 = root.left = Node("b")
+# node3 = root.right = Node("c")
+# node4 = node2.left = Node("d")
+# node5 = node2.right = Node("e")
 
-node6 = node3.left = Node("f")
-node7 = node3.right = Node("g")
+# node6 = node3.left = Node("f")
+# node7 = node3.right = Node("g")
 
-node8 = node4.left = Node("h")
-node9 = node5.right = Node("i")
+# node8 = node4.left = Node("h")
+# node9 = node5.right = Node("i")
 
-node10 = node6.left = Node("j")
-node11 = node7.right = Node("k")
+# node10 = node6.left = Node("j")
+# node11 = node7.right = Node("k")
 
-print("LCA(d, e) is "+findLCA("d", "e"))
-print("LCA(d, f) is "+findLCA("d", "f"))
-print("LCA(c, d) is "+findLCA("c", "d"))
-print("LCA(b, d) is "+findLCA("b", "d"))
-print("LCA(h, i) is "+findLCA("h", "i"))
-print("LCA(j, l) is "+findLCA("j", "l"))
-print("LCA(j, k) is "+findLCA("j", "k"))
-print("LCA(h, d) is "+findLCA("h", "d"))
-print("LCA(l, d) is "+findLCA("l", "d"))
+# print("LCA(d, e) is "+findLCA("d", "e"))
+# print("LCA(d, f) is "+findLCA("d", "f"))
+# print("LCA(c, d) is "+findLCA("c", "d"))
+# print("LCA(b, d) is "+findLCA("b", "d"))
+# print("LCA(h, i) is "+findLCA("h", "i"))
+# print("LCA(j, l) is "+findLCA("j", "l"))
+# print("LCA(j, k) is "+findLCA("j", "k"))
+# print("LCA(h, d) is "+findLCA("h", "d"))
+# print("LCA(l, d) is "+findLCA("l", "d"))
