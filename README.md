@@ -17,4 +17,4 @@ the output from Node-JS version was
 
 I have implemented unit tests using the [unittest](https://docs.python.org/3/library/unittest.html) module.
 
-![image](https://user-images.githubusercontent.com/91032767/137038241-00473e6b-f9de-4404-a694-cef090491dcf.png)
+![image](https://user-images.githubusercontent.com/91032767/137159149-aabb6dac-99d3-4608-9789-d54d038b19f7.png)
