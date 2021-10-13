@@ -12,3 +12,9 @@ the output looks like
 the output from Node-JS version was
 
 ![image](https://user-images.githubusercontent.com/91032767/135155308-a1e53683-61a1-4487-83d6-da865c25facd.png)
+
+# Unit Testing
+
+I have implemented unit tests using the [unittest](https://docs.python.org/3/library/unittest.html) module.
+
+![image](https://user-images.githubusercontent.com/91032767/137038241-00473e6b-f9de-4404-a694-cef090491dcf.png)
