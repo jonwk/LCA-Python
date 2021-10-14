@@ -21,51 +21,51 @@ class TestLCA(unittest.TestCase):
         self.node11 = self.node7.right = LCA.Node("k")
 
     def test_base1(self):
-        self.assertTrue(LCA.findLCA("b", "c"), "a")
-        self.assertTrue(LCA.findLCA("d", "e"), "b")
-        self.assertTrue(LCA.findLCA("f", "g"), "c")
+        self.assertEquals(LCA.findLCA("b", "c"), "a")
+        self.assertEquals(LCA.findLCA("d", "e"), "b")
+        self.assertEquals(LCA.findLCA("f", "g"), "c")
 
     def test_base2(self):
-        self.assertTrue(LCA.findLCA("h", "i"), "b")
-        self.assertTrue(LCA.findLCA("j", "k"), "c")
-        self.assertTrue(LCA.findLCA("h", "j"), "a")
-        self.assertTrue(LCA.findLCA("i", "k"), "a")
+        self.assertEquals(LCA.findLCA("h", "i"), "b")
+        self.assertEquals(LCA.findLCA("j", "k"), "c")
+        self.assertEquals(LCA.findLCA("h", "j"), "a")
+        self.assertEquals(LCA.findLCA("i", "k"), "a")
 
     def test_complex(self):
-        self.assertTrue(LCA.findLCA("h", "e"), "b")
-        self.assertTrue(LCA.findLCA("d", "i"), "b")
-        self.assertTrue(LCA.findLCA("f", "k"), "c")
-        self.assertTrue(LCA.findLCA("j", "g"), "c")
+        self.assertEquals(LCA.findLCA("h", "e"), "b")
+        self.assertEquals(LCA.findLCA("d", "i"), "b")
+        self.assertEquals(LCA.findLCA("f", "k"), "c")
+        self.assertEquals(LCA.findLCA("j", "g"), "c")
 
-        self.assertTrue(LCA.findLCA("b", "g"), "a")
-        self.assertTrue(LCA.findLCA("c", "h"), "a")
+        self.assertEquals(LCA.findLCA("b", "g"), "a")
+        self.assertEquals(LCA.findLCA("c", "h"), "a")
 
     def test_itself(self):
-        self.assertTrue(LCA.findLCA("b", "d"), "b")
-        self.assertTrue(LCA.findLCA("b", "e"), "b")
-        self.assertTrue(LCA.findLCA("b", "h"), "b")
+        self.assertEquals(LCA.findLCA("b", "d"), "b")
+        self.assertEquals(LCA.findLCA("b", "e"), "b")
+        self.assertEquals(LCA.findLCA("b", "h"), "b")
 
-        self.assertTrue(LCA.findLCA("c", "g"), "c")
-        self.assertTrue(LCA.findLCA("c", "f"), "c")
-        self.assertTrue(LCA.findLCA("c", "k"), "c")
+        self.assertEquals(LCA.findLCA("c", "g"), "c")
+        self.assertEquals(LCA.findLCA("c", "f"), "c")
+        self.assertEquals(LCA.findLCA("c", "k"), "c")
 
-        self.assertTrue(LCA.findLCA("a", "b"), "a")
-        self.assertTrue(LCA.findLCA("a", "c"), "a")
+        self.assertEquals(LCA.findLCA("a", "b"), "a")
+        self.assertEquals(LCA.findLCA("a", "c"), "a")
 
     def test_same_node(self):
-        self.assertTrue(LCA.findLCA("a", "a"), "a")
-        self.assertTrue(LCA.findLCA("b", "b"), "b")
-        self.assertTrue(LCA.findLCA("c", "c"), "c")
-        self.assertTrue(LCA.findLCA("d", "d"), "d")
+        self.assertEquals(LCA.findLCA("a", "a"), "a")
+        self.assertEquals(LCA.findLCA("b", "b"), "b")
+        self.assertEquals(LCA.findLCA("c", "c"), "c")
+        self.assertEquals(LCA.findLCA("d", "d"), "d")
 
     def test_invalid(self):
-        self.assertTrue(LCA.findLCA("l", "d"), "Error")
-        self.assertTrue(LCA.findLCA("l", "z"), "Error")
+        self.assertEquals(LCA.findLCA("l", "d"), "Error")
+        self.assertEquals(LCA.findLCA("l", "z"), "Error")
 
     def test_empty(self):
-        self.assertTrue(LCA.findLCA(" ", "a"), "Error")
-        self.assertTrue(LCA.findLCA(" ", " "), "Error")
-        self.assertTrue(LCA.findLCA("", ""), "Error")
+        self.assertEquals(LCA.findLCA(" ", "a"), "Error")
+        self.assertEquals(LCA.findLCA(" ", " "), "Error")
+        self.assertEquals(LCA.findLCA("", ""), "Error")
 
     def test_numbers(self):
         self.node1 = self.root = LCA.root = LCA.Node(1)
@@ -91,9 +91,9 @@ class TestLCA(unittest.TestCase):
         #  /      \   /      \
         #  8       9 10       11
 
-        self.assertTrue(LCA.findLCA(2, 3), 1)
-        self.assertTrue(LCA.findLCA(4, 5), 2)
-        self.assertTrue(LCA.findLCA(6, 7), 3)
+        self.assertEquals(LCA.findLCA(2, 3), 1)
+        self.assertEquals(LCA.findLCA(4, 5), 2)
+        self.assertEquals(LCA.findLCA(6, 7), 3)
 
 
 if __name__ == '__main__':
