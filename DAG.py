@@ -1,13 +1,15 @@
 import sys
+
+
 class DAG(object):
 
     # prints graph
     def printDAG(self, graph):
-       print(graph)
+        print(graph)
 
     # prints the nodes from a list from graph
-    def printNodeList(self,list):
-       print(list)
+    def printNodeList(self, list):
+        print(list)
 
     # create empty set for nodes for the DAG
     def __init__(self):
@@ -36,7 +38,7 @@ class DAG(object):
         if ind_node in graph and dep_node in graph:
             graph[ind_node].append(dep_node)
         else:
-            raise KeyError("One or both nodes do not exist")
+            print("nodes do not exist")
 
     # function that does DFS
     def DFS(self, node_list, graph, node):
@@ -45,7 +47,8 @@ class DAG(object):
         else:
             for child in graph[node]:
                 if child not in node_list:
-                    node_list.append(child) #Add to list that stores the route
+                    # Add to list that stores the route
+                    node_list.append(child)
                     if not self.DFS(node_list, graph, child):
                         return False
                     node_list.remove(child)
@@ -70,7 +73,7 @@ class DAG(object):
         global node_B_list
         node_B_list = []
 
-        #gets the node routes for each node and stores them into a list
+        # gets the node routes for each node and stores them into a list
         for node in graph:
             self.LCA_DFS([node], graph, node, 1, nodeA)
             self.LCA_DFS([node], graph, node, 2, nodeB)
@@ -78,19 +81,19 @@ class DAG(object):
         lowest_count = sys.maxsize
         for itemA in node_A_list:
             for itemB in node_B_list:
-                count = 0 # count increments per route until node is found
+                count = 0  # count increments per route until node is found
                 for index, node1 in enumerate(reversed(itemA)):
                     count = index
                     for node2 in reversed(itemB):
-                        if node1 == node2 and count < lowest_count: # LCA is the one with the lowest count
+                        if node1 == node2 and count < lowest_count:  # LCA is the one with the lowest count
                             LCANode = node2
                             lowest_count = count
                             return LCANode
 
                         count += 1
 
-
     # calculates the DFS for an LCA node
+
     def LCA_DFS(self, node_list, graph, node, index, end_node):
         if node == end_node:
 
@@ -107,7 +110,8 @@ class DAG(object):
         else:
             for child in graph[node]:
                 if child not in node_list:
-                    node_list.append(child) # appends child node to correct node list using the index parameter
+                    # appends child node to correct node list using the index parameter
+                    node_list.append(child)
                     if not self.LCA_DFS(node_list, graph, child, index, end_node):
                         return False
                     node_list.remove(child)
