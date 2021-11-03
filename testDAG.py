@@ -42,7 +42,7 @@ class MyTestCase(unittest.TestCase):
         DAG5.addNode('5')
         DAG5.addEdge('3', '4')
         DAG5.addEdge('4', '2')
-        self.assertFalse(DAG5.DFSWrapper(DAG5.graph))
+        self.assertFalse(DAG5.Wrapper_DFS(DAG5.graph))
         self.assertTrue(DAG5)
 
     # test to see if there are cycles in graph
@@ -52,7 +52,7 @@ class MyTestCase(unittest.TestCase):
         DAG6.addNode('3')
         DAG6.addEdge('2', '3')
         self.assertTrue(DAG6)
-        self.assertTrue(DAG6.DFSWrapper(DAG6.graph))
+        self.assertTrue(DAG6.Wrapper_DFS(DAG6.graph))
 
     # test to see if there are cycles in graph
     def test3_DAG(self):
@@ -62,7 +62,7 @@ class MyTestCase(unittest.TestCase):
         DAG7.addNode('1')
         DAG7.addEdge('2', '4')
         self.assertTrue(DAG7)
-        self.assertTrue(DAG7.DFSWrapper(DAG7.graph))
+        self.assertTrue(DAG7.Wrapper_DFS(DAG7.graph))
 
     # test for LCA of two nodes in a DAG where nodes are integers
     def test1_LCA(self):
@@ -84,8 +84,8 @@ class MyTestCase(unittest.TestCase):
         DAG8.addEdge(5, 6)
         DAG8.addEdge(6, 8)
         DAG8.addEdge(4, 7)
-        DAG8.LCA_DFS_Wrapper(DAG8.graph, 8, 5)
-        self.assertTrue(DAG8.LCA_DFS_Wrapper(DAG8.graph, 8, 5) == 5)
+        DAG8.Wrapper_LCA(DAG8.graph, 8, 5)
+        self.assertTrue(DAG8.Wrapper_LCA(DAG8.graph, 8, 5) == 5)
 
     # test for LCA of two nodes in a DAG where nodes are strings
     def test2_LCA(self):
@@ -107,8 +107,8 @@ class MyTestCase(unittest.TestCase):
         DAG9.addEdge('e', 'f')
         DAG9.addEdge('f', 'h')
         DAG9.addEdge('d', 'g')
-        DAG9.LCA_DFS_Wrapper(DAG9.graph, 'h', 'e')
-        self.assertTrue(DAG9.LCA_DFS_Wrapper(DAG9.graph, 'h', 'e') == 'e')
+        DAG9.Wrapper_LCA(DAG9.graph, 'h', 'e')
+        self.assertTrue(DAG9.Wrapper_LCA(DAG9.graph, 'h', 'e') == 'e')
 
     # test for LCA of two nodes in a DAG where nodes are strings
     def test3_LCA(self):
@@ -130,10 +130,10 @@ class MyTestCase(unittest.TestCase):
         DAG10.addEdge('d', 'g')
         DAG10.addEdge('e', 'f')
         DAG10.addEdge('f', 'h')
-        self.assertTrue(DAG10.LCA_DFS_Wrapper(DAG10.graph, 'h', 'g') == 'a')
-        self.assertTrue(DAG10.LCA_DFS_Wrapper(DAG10.graph, 'a', 'g') == 'a')
-        self.assertTrue(DAG10.LCA_DFS_Wrapper(DAG10.graph, 'g', 'b') == 'a')
-        self.assertFalse(DAG10.LCA_DFS_Wrapper(DAG10.graph, 'h', 'f') == 'a')
+        self.assertTrue(DAG10.Wrapper_LCA(DAG10.graph, 'h', 'g') == 'a')
+        self.assertTrue(DAG10.Wrapper_LCA(DAG10.graph, 'a', 'g') == 'a')
+        self.assertTrue(DAG10.Wrapper_LCA(DAG10.graph, 'g', 'b') == 'a')
+        self.assertFalse(DAG10.Wrapper_LCA(DAG10.graph, 'h', 'f') == 'a')
 
     # test for LCA of two nodes in a DAG where nodes are strings
     def test4_LCA(self):
@@ -155,10 +155,10 @@ class MyTestCase(unittest.TestCase):
         DAG10.addEdge('d', 'g')
         DAG10.addEdge('e', 'f')
         DAG10.addEdge('f', 'h')
-        self.assertTrue(DAG10.LCA_DFS_Wrapper(DAG10.graph, 'h', 'g') == 'a')
-        self.assertTrue(DAG10.LCA_DFS_Wrapper(DAG10.graph, 'a', 'g') == 'a')
-        self.assertTrue(DAG10.LCA_DFS_Wrapper(DAG10.graph, 'g', 'b') == 'a')
-        self.assertFalse(DAG10.LCA_DFS_Wrapper(DAG10.graph, 'h', 'f') == 'a')
+        self.assertTrue(DAG10.Wrapper_LCA(DAG10.graph, 'h', 'g') == 'a')
+        self.assertTrue(DAG10.Wrapper_LCA(DAG10.graph, 'a', 'g') == 'a')
+        self.assertTrue(DAG10.Wrapper_LCA(DAG10.graph, 'g', 'b') == 'a')
+        self.assertFalse(DAG10.Wrapper_LCA(DAG10.graph, 'h', 'f') == 'a')
 
     # test for LCA of a node and a non-node in graph
     def test5_LCA(self):
@@ -166,12 +166,12 @@ class MyTestCase(unittest.TestCase):
         DAG11.addNode('a')
         DAG11.addNode('b')
         DAG11.addEdge('a', 'b')
-        self.assertTrue(DAG11.LCA_DFS_Wrapper(DAG11.graph, 'a', 'g') == None)
+        self.assertTrue(DAG11.Wrapper_LCA(DAG11.graph, 'a', 'g') == None)
 
     # test for LCA of an empty graph
     def test6_LCA(self):
         DAG12 = DAG()
-        self.assertTrue(DAG12.LCA_DFS_Wrapper(DAG12.graph, None, None) == None)
+        self.assertTrue(DAG12.Wrapper_LCA(DAG12.graph, None, None) == None)
 
 
 if __name__ == '__main__':
