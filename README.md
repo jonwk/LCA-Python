@@ -18,3 +18,6 @@ the output from Node-JS version was
 I have implemented unit tests using the [unittest](https://docs.python.org/3/library/unittest.html) module.
 
 ![image](https://user-images.githubusercontent.com/91032767/137159149-aabb6dac-99d3-4608-9789-d54d038b19f7.png)
+
+![image](https://user-images.githubusercontent.com/91032767/140192911-0e22a89c-0787-48a5-bb0f-5e4961800f03.png)
+
